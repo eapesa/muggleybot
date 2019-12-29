@@ -1,0 +1,29 @@
+service: muggleybot
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: python3.8
+  # runtime: python2.7
+
+functions:
+  create-booking:
+    handler: create-booking.handler
+    events:
+    - http:
+        method: post
+        path: /muggley/booking
+  # check-booking:
+  #   handler: check-booking.handler
+  #   events:
+  #     http:
+  #       method: get
+  #       path: /muggley/booking
+  # cancel-booking:
+  #   handler: cancel-booking.handler
+  #   events:
+  #     http:
+  #       method: delete
+  #       path: /muggley/booking
