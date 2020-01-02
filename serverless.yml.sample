@@ -24,7 +24,7 @@ provider:
       - subnet-456def
 
 functions:
-- create_booking:
+- manage_booking:
     name: ${self:service}-create_booking
     handler: create_booking.handler
     package:
