@@ -1,0 +1,76 @@
+{
+  "messageVersion": "1.0",
+  "invocationSource": "FulfillmentCodeHook",
+  "userId": "k10szkswfs8cjyzrmsvduy5a0ga8iku0",
+  "sessionAttributes": {},
+  "requestAttributes": None,
+  "bot": {
+    "name": "MagliBot",
+    "alias": "$LATEST",
+    "version": "$LATEST"
+  },
+  "outputDialogMode": "Text",
+  "currentIntent": {
+    "name": "FlightBookingIntent",
+    "slots": {
+      "ReturnDate": "2020-11-03",
+      "FlightDate": "2020-10-30",
+      "Email": "eapesa@gmail.com",
+      "Airline": "Cebu Pacific Air",
+      "Country": "Japan"
+    },
+    "slotDetails": {
+      "ReturnDate": {
+        "resolutions": [],
+        "originalValue": "Nov 3"
+      },
+      "FlightDate": {
+        "resolutions": [],
+        "originalValue": "30th of October"
+      },
+      "Email": {
+        "resolutions": [],
+        "originalValue": "eapesa@gmail.com"
+      },
+      "Airline": {
+        "resolutions": [{
+          "value": "Cebu Pacific Air"
+        }],
+        "originalValue": "Cebu Pacific Air"
+      },
+      "Country": {
+        "resolutions": [],
+        "originalValue": "Japan"
+      }
+    },
+    "confirmationStatus": "Confirmed"
+  },
+  "inputTranscript": "yes",
+  "recentIntentSummaryView": [{
+    "intentName": "FlightBookingIntent",
+    "checkpointLabel": None,
+    "slots": {
+      "ReturnDate": "2020-11-03",
+      "FlightDate": "2020-10-30",
+      "Email": "eapesa@gmail.com",
+      "Airline": "Cebu Pacific Air",
+      "Country": "Japan"
+    },
+    "confirmationStatus": "None",
+    "dialogActionType": "ConfirmIntent",
+    "fulfillmentState": None,
+    "slotToElicit": None
+  }, {
+    "intentName": "GreetingsIntent",
+    "checkpointLabel": None,
+    "slots": {},
+    "confirmationStatus": "None",
+    "dialogActionType": "Close",
+    "fulfillmentState": "Fulfilled",
+    "slotToElicit": None
+  }],
+  "sentimentResponse": {
+    "sentimentLabel": "POSITIVE",
+    "sentimentScore": "{Positive: 0.5321425,Negative: 0.015753245,Neutral: 0.45189878,Mixed: 2.0541479E-4}"
+  }
+}

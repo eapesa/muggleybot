@@ -1,0 +1,54 @@
+service: muggleybot
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+
+package:
+  exclude: 
+    - ./**
+  individually: true
+
+provider:
+  name: aws
+  runtime: python3.7
+  # runtime: python2.7
+  region: us-east-1
+  stackTags: 
+    Name: ${self:service}
+  vpc:
+    securityGroupIds: 
+      - sg-abcd1234
+    subnetIds: 
+      - subnet-123abc
+      - subnet-456def
+
+functions:
+- create_booking:
+    name: ${self:service}-create_booking
+    handler: create_booking.handler
+    package:
+      include:
+        - create_booking.py
+        - code_generator/app.py
+    events:
+    - http:
+        method: post
+        path: /muggley/booking
+    environment:
+      redis_host: project-hawkeye-poc-cache-001.project-hawkeye-poc-cache.tfjrmy.use1.cache.amazonaws.com
+      redis_port: 6379
+      redis_db: 1
+      redis_ssl: true
+  # check-booking:
+  #   handler: check-booking.handler
+  #   events:
+  #     http:
+  #       method: get
+  #       path: /muggley/booking
+  # cancel-booking:
+  #   handler: cancel-booking.handler
+  #   events:
+  #     http:
+  #       method: delete
+  #       path: /muggley/booking

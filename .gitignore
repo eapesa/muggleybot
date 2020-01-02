@@ -25,3 +25,7 @@ __pycache__/
 
 # Node gitignores
 node_modules/
+
+# Custom gitignores
+requirements.local
+serverless.yml
